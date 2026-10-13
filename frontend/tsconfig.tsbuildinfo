@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/api/api.ts","./src/components/Navbar.tsx","./src/components/RiskBadge.tsx","./src/context/AuthContext.tsx","./src/pages/Login.tsx","./src/pages/RecruiterDashboard.tsx","./src/pages/Register.tsx","./src/pages/SeekerDashboard.tsx"],"version":"5.9.3"}
