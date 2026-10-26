@@ -4,7 +4,9 @@ import { Pool } from "pg";
 // (PGHOST, PGPORT, PGUSER, PGPASSWORD, PGDATABASE), which `pg` reads
 // automatically.
 export const pool = new Pool(
-  process.env.DATABASE_URL ? { connectionString: process.env.DATABASE_URL } : undefined
+  process.env.DATABASE_URL
+    ? { connectionString: process.env.DATABASE_URL }
+    : undefined,
 );
 
 pool.on("error", (err) => {

@@ -11,6 +11,8 @@ import userRoutes from "./routes/user.routes";
 import notificationRoutes from "./routes/notification.routes";
 import { initDb } from "./db/init";
 
+import { errorHandler } from "./middleware/errorHandler";
+
 dotenv.config();
 
 const app = express();
@@ -31,17 +33,7 @@ app.use("/api/applications", applicationRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/notifications", notificationRoutes);
 
-app.use(
-  (
-    err: any,
-    _req: express.Request,
-    res: express.Response,
-    _next: express.NextFunction,
-  ) => {
-    console.error(err);
-    res.status(500).json({ message: err.message || "Internal server error" });
-  },
-);
+app.use(errorHandler);
 
 async function start() {
   try {
